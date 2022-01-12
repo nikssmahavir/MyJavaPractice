@@ -1,0 +1,83 @@
+package interfaceDemo;
+
+ interface Shape {
+
+     void input ();
+     void area ();
+
+    }
+
+
+    class Circle implements Shape
+    {
+        int r = 0;
+        double pi = 3.14, ar = 0;
+       @Override
+        public void input()
+        {
+            r = 5;
+        }
+        @Override
+        public void area()
+        {
+            ar = pi * r * r;
+            System.out.println("Area of circle:"+ar);
+        }
+    }
+    class Rectangle extends Circle
+    {
+        int l = 0, b = 0;
+        double ar;
+        @Override
+        public void input()
+        {
+            super.input();
+            l = 6;
+            b = 4;
+        }
+        @Override
+        public void area()
+        {
+            super.area();
+            ar = l * b;
+            System.out.println("Area of rectangle:"+ar);
+        }
+    }
+      class Triangle implements Shape
+     {
+         int b= 0; int h=0;
+         double area=0;
+         @Override
+         public void input()
+         {
+             b = 10;
+             h = 15;
+         }
+         @Override
+         public void area ()
+         {
+            area = b*h;
+             System.out.println("area of triangle:"+area);
+         }
+
+     }
+
+
+    interface veera {
+
+
+        public static void main(String[] args) {
+            {
+                Rectangle r = new Rectangle();
+                r.input();
+                r.area();
+                Triangle t = new Triangle ();
+                t.input();
+                t.area();
+
+                }
+            }
+
+        }
+
+
